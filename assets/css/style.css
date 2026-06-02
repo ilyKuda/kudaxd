@@ -109,3 +109,173 @@ body.contact-route .contact-page-view {
     clip-path: inset(0 round 26px) !important;
   }
 }
+
+
+/* v42 hard overrides: fix rounded cards + remove contact panel box */
+#achievements,
+#reviews {
+  overflow: visible !important;
+}
+
+#achievements .achievements-grid,
+#reviews .reviews-grid {
+  overflow: visible !important;
+}
+
+#achievements .achievement-card,
+#reviews .review-card {
+  border-radius: 34px !important;
+  overflow: hidden !important;
+  background-clip: padding-box !important;
+  isolation: isolate !important;
+  contain: paint !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+  mask-image: radial-gradient(white, black) !important;
+}
+
+#achievements .achievement-card img {
+  border-radius: 34px !important;
+  overflow: hidden !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+  mask-image: radial-gradient(white, black) !important;
+}
+
+#achievements .achievement-card::before,
+#achievements .achievement-card::after,
+#reviews .review-card::before,
+#reviews .review-card::after {
+  border-radius: 34px !important;
+  overflow: hidden !important;
+}
+
+#reviews .review-avatar,
+#reviews .review-avatar img,
+.review-avatar,
+.review-avatar img {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+  mask-image: radial-gradient(white, black) !important;
+}
+
+/* Contact route should feel like a normal page, not a card/modal panel */
+body.contact-route main,
+body.contact-route .slider-section,
+body.contact-route #achievements,
+body.contact-route #reviews,
+body.contact-route #about,
+body.contact-route #pricing,
+body.contact-route .site-footer {
+  display: none !important;
+}
+
+body.contact-route #contact.contact-page-view,
+body.contact-route .contact-page-view {
+  display: grid !important;
+  place-items: center !important;
+  min-height: 100dvh !important;
+  padding: clamp(132px, 18vh, 190px) 0 clamp(72px, 10vh, 110px) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.contact-page-inner {
+  display: grid !important;
+  place-items: center !important;
+  width: min(1180px, calc(100% - 36px)) !important;
+  margin-inline: auto !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.contact-page-panel {
+  width: min(840px, 100%) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  text-align: center !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.contact-page-panel::before,
+.contact-page-panel::after,
+.contact-page-inner::before,
+.contact-page-inner::after,
+.contact-page-view::before,
+.contact-page-view::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+.contact-page-panel .modal-label {
+  margin-bottom: 22px !important;
+}
+
+.contact-page-panel h2 {
+  max-width: 950px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-shadow: 0 0 70px rgba(168, 85, 247, 0.18) !important;
+}
+
+.contact-page-panel .contact-page-status {
+  margin: 0 auto 30px !important;
+}
+
+.contact-page-panel .discord-contact-card,
+#contact .discord-contact-card {
+  width: min(660px, 100%) !important;
+  margin: 30px auto 20px !important;
+  border-radius: 34px !important;
+  overflow: hidden !important;
+  clip-path: none !important;
+  contain: paint !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+  mask-image: radial-gradient(white, black) !important;
+}
+
+.contact-page-panel .contact-note-small,
+#contact .contact-note-small {
+  width: min(650px, 100%) !important;
+  margin: 20px auto 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--muted) !important;
+  line-height: 1.75 !important;
+  font-weight: 650 !important;
+}
+
+@media (max-width: 680px) {
+  #achievements .achievement-card,
+  #achievements .achievement-card img,
+  #achievements .achievement-card::before,
+  #achievements .achievement-card::after,
+  #reviews .review-card,
+  #reviews .review-card::before,
+  #reviews .review-card::after,
+  .contact-page-panel .discord-contact-card,
+  #contact .discord-contact-card {
+    border-radius: 26px !important;
+  }
+
+  .contact-page-panel {
+    width: min(100%, 680px) !important;
+  }
+}

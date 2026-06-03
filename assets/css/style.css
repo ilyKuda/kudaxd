@@ -279,3 +279,50 @@ body.contact-route .contact-page-view {
     width: min(100%, 680px) !important;
   }
 }
+
+
+/* v43: third review + desktop 3-card row */
+#reviews .reviews-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+#reviews .review-card {
+  padding: 24px !important;
+  min-width: 0 !important;
+}
+
+#reviews .review-top {
+  gap: 14px !important;
+  align-items: center !important;
+}
+
+#reviews .review-avatar {
+  width: 72px !important;
+  height: 72px !important;
+  flex: 0 0 72px !important;
+}
+
+#reviews .review-top h3 {
+  font-size: 1.14rem !important;
+}
+
+#reviews .review-top span {
+  font-size: 0.78rem !important;
+  white-space: nowrap !important;
+}
+
+#reviews .review-text {
+  font-size: clamp(0.96rem, 1.05vw, 1.05rem) !important;
+  line-height: 1.72 !important;
+}
+
+@media (max-width: 1040px) {
+  #reviews .reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #reviews .review-card {
+    padding: 24px !important;
+  }
+}
